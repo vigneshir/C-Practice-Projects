@@ -15,6 +15,3 @@ abstract typedef<  type1, type2, type3, type4, ... , typen  > seq3
 // each element different type             arbitrary length
 cannot be defined, since for knowing type of each element we need to know number of elements. 
 for this, you need to take some parameter as argument to seuence type from user, like how stack is parameterized in its definition
-
-// arbitrary (unknown) type                 fixed length
-abstract typedef<  < ,n >  > seq4
