@@ -1,0 +1,23 @@
+/* value definition */
+typedef abstract <float, float> COMPLEX ;
+
+/* operator definition */
+abstract COMPLEX add( COMPLEX c1, COMPLEX c2 )
+postcondition		add[0] == c1[0] + c2[0] ;
+			add[1] == c1[1] + c2[1] ;
+
+abstract COMPLEX subtract( COMPLEX c1, COMPLEX c2 )
+postcondition		subtract[0] == c1[0] - c2[0] ;
+			subtract[1] == c1[1] - c2[1] ;
+
+abstract COMPLEX multiply( COMPLEX c1, COMPLEX c2 )
+postcondition		multiply[0] == c1[0]*c2[0]  - c1[1]*c2[1] ;
+			multiply[1] == c1[0]*c2[1] + c1[1]*c2[0] ;
+
+abstract COMPLEX divide( COMPLEX c1, COMPLEX c2 )
+postcondition		divide[0] == (c1[0]*c2[0] + c1[1]*c2[1])/(c2[0]*c2[0] + c2[1]*c2[1]) ;
+			divide[1] == (c1[1]*c2[0] -  c1[0]*c2[1])/(c2[0]*c2[0] + c2[1]*c2[1]) ;
+
+abstract COMPLEX conjugate( COMPLEX c1 )
+postcondition		conjugate[0] == c1[0] ;
+			conjugate[1] == -1 * c1[1] ;

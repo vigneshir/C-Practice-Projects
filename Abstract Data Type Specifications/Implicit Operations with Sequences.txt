@@ -1,0 +1,18 @@
+Sequence:  s = < s0, s1, s2, ..., sn-1 >
+
+len(s)		   returns number of elements in sequence (n)
+first(s)		   returns first element of sequence (s0)
+last(s)		   returns last element of sequence (sn-1)
+sub(s,i,j)	   subsequence of s starting from element at position i (start counting from 0) consisting of j elements
+		   example:  t = sub(s, i, k)   means
+			       t = < si, si+1, si+2, ..., si+k-1 >
+s == t                 check if each element of sequence s is same as corresponding element of sequence t
+s + t		  concatenation of sequences s and t ( i.e. elements of sequence s followed by those of t )
+place(s,i,x)	  insert element x immmediately following position i in original sequence s and shift elements originally 
+		  at positions i, i+1,...  one place right.
+		  i.e.:   place(s, i, x) is equivalent to sub(s,0,i) + <x> + sub(s, i+1, len(s)-i-1)
+s - <x>		  remove all occurrences of element x from sequence s
+delete(s,i)	  delete element at position i from sequence s
+		  i.e. delete(s,i) is equivalent to sub(s,0,i) + sub( s, i+1, len(s)-i )
+frequency(s,x)   returns the frequency of element x in sequence s
+  

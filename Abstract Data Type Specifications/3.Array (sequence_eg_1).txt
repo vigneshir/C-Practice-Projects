@@ -1,0 +1,12 @@
+/* value definition */
+abstract typedef<  <eltype, size>  > ARRAY(eltype, size)
+condition		type(size) == int;                                          // assume type(arg) as a function returning type of its argument
+
+/* operator definition */
+abstract eltype extract( ARRAY(eltype, size) a , int i )	        // written a[i]
+precondition		0 <= i < size ;
+postcondition	extract == a_i ;
+
+abstract store( ARRAY(eltype, size) a, int i, eltype elt )	        // written a[i] = elt
+precondition		0 <= i < size ;
+postcondition	a[i] == elt ;

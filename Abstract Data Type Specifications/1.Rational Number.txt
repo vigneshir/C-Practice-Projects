@@ -1,0 +1,33 @@
+/*value definition*/
+abstract typedef <integer,integer> RATIONAL;
+condition RATIONAL[1]<>0;
+
+/*operator definition*/
+
+abstract RATIONAL makerational(int a, int b)
+precondition  b<>0;
+postcondition makerational[0]==a;
+		  makerational[1]==b;
+
+abstract RATIONAL reducedform( RATIONAL a)
+postcondition reducedform[0] == a[0] / GCD(a[0],a[1]) ;
+		  reducedform[1] == a[1] / GCD(a[0],a[1]) ;
+
+abstract int isequal( RATIONAL a, RATIONAL b)
+postcondition isequal == (a[0]*b[1]==a[1]*b[0]) ;
+
+abstract RATIONAL addrat(RATIONAL a, RATIONAL b)
+postcondition addrat == reducedform(makerational( a[0]*b[1]+b[0]*a[1], a[1]*b[1] )) ;
+
+abstract RATIONAL subrat(RATIONAL a, RATIONAL b)
+postcondition subrat == reduceform(makerational( a[0]*b[1]-b[0]*a[1], a[1]*b[1] )) ;
+
+abstract RATIONAL mulrat(RATIONAL a, RATIONAL b)
+postcondition mulrat == reducedform(makerational( a[0]*b[0], a[1]*b[1] )) ;
+
+abstract RATIONAL divrat(RATIONAL a, RATIONAL b)
+postcondition divrat == reducedform(makerational( a[0]*b[1], a[1]*b[0] )) ;
+
+abstract RATIONAL printrat(RATIONAL a)
+postcondition printrat == a[0]+"/"+a[1]; 
+

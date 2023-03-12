@@ -1,0 +1,14 @@
+abstract typedef <<eltype>> QUEUE (eltype);
+
+abstract bool isempty( QUEUE (eltype) q )
+postcondition		isempty == ( len(q)==0 );
+
+abstract eltype dequeue( QUEUE (eltype) q )
+precondition		isempty(q) == FALSE ;
+postcondition		dequeue == first(q') ;
+			q = sub( q', 1, len(q')-1 );
+
+abstract void enqueue( QUEUE (eltype) q , eltype elt )
+postcondition		q = q' + <elt> ;
+ 
+ 

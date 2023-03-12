@@ -1,0 +1,17 @@
+/* value definition */
+abstract typedef < <eltype> > STACK(eltype);
+
+/* operator definition */
+abstract isempty(  STACK(eltype) s )
+postcondition		isempty == ( len(s) == 0 );
+
+abstract eltype pop( STACK(eltype) s )
+precondition		isempty(s) == FALSE;
+postcondition		pop ==	first( s' );
+			s == sub( s' , 1, len( s' ) - 1 );
+			// note that the numbering is considered to be starting from 0 and from the top of the stack
+			// s' refers to the original (before popping) stack. Accordingly subsequence starts from position 1 instead of 0
+			   ( to indicate popping of element at position 0 )
+
+abstract push( STACK(eltype) s , eltype elt )
+postcondition		s == < elt > + s' ;
