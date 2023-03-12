@@ -1,6 +1,0 @@
-Programs for evaluating the value of infix, postfix and prefix expressions 
-run into errors on successive runs after saying 'yes'.
-
-Perhaps some problem with %s not taking input with spaces or
-some '\n' remaining in the input buffer or 
-some unnecessary space considered at start of entered expression.
