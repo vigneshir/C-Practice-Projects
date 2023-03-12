@@ -15,4 +15,3 @@ s - <x>		  remove all occurrences of element x from sequence s
 delete(s,i)	  delete element at position i from sequence s
 		  i.e. delete(s,i) is equivalent to sub(s,0,i) + sub( s, i+1, len(s)-i )
 frequency(s,x)   returns the frequency of element x in sequence s
-  
